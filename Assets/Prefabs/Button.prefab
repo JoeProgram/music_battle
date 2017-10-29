@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 136120763876870864}
   - component: {fileID: 23261770927923796}
   m_Layer: 0
-  m_Name: pressable
+  m_Name: face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,6 +55,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4011690611081924}
+  - component: {fileID: 114136484551278952}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -185,6 +186,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1722239627709938}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114136484551278952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1765861421657150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245dcb178f7b60445aabc93bd801b507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perimeter: {fileID: 1722239627709938}
+  face: {fileID: 1552779378396350}
+  perimeterMaterialDoPress: {fileID: 2100000, guid: f053ee81aa78c6c46a936f397439c2c9,
+    type: 2}
+  mAxis: 
 --- !u!136 &136120763876870864
 CapsuleCollider:
   m_ObjectHideFlags: 1
