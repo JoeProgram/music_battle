@@ -7,17 +7,27 @@ ModelImporter:
   fileIDToRecycleName:
     100000: group_0_16089887
     100002: //RootNode
+    100004: group_0_14900002
     400000: group_0_16089887
     400002: //RootNode
+    400004: group_0_14900002
     2300000: group_0_16089887
+    2300002: group_0_14900002
     3300000: group_0_16089887
+    3300002: group_0_14900002
     4300000: group_0_16089887
+    4300002: group_0_14900002
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: group_0_14900002Mat
+    second: {fileID: 2100000, guid: ffdee1c0d0585fc4985a38c4bd665bb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: group_0_16089887Mat
-    second: {fileID: 2100000, guid: 47a2932983110d8429541ebd4efe463b, type: 2}
+    second: {fileID: 2100000, guid: 62ec18192a3098046a1b85ec3bd9268f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
