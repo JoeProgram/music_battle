@@ -35,6 +35,11 @@ public class MusicButton : MonoBehaviour {
 			SetPressed(false);
 		}
 
+		// testing
+		if(Input.GetKeyDown(KeyCode.A)) {
+			SetShouldPress(!shouldPress);
+		}
+
 	}
 
 	protected void SetPressed( bool pressed = true ){
@@ -47,7 +52,6 @@ public class MusicButton : MonoBehaviour {
 
 	public void SetShouldPress( bool shouldPress = true ){
 		this.shouldPress = shouldPress;
-
-
+		perimeter.GetComponent<Renderer>().material = shouldPress ? perimeterMaterialDoPress : perimeterMaterialDontPress;
 	}
 }
