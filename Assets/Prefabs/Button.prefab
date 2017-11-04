@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4773299000332580}
   - component: {fileID: 33163174646691100}
-  - component: {fileID: 136120763876870864}
   - component: {fileID: 23261770927923796}
   m_Layer: 0
   m_Name: face
@@ -38,7 +37,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4923035344425450}
   - component: {fileID: 33372409836947732}
-  - component: {fileID: 136483874160555990}
   - component: {fileID: 23364551552427326}
   m_Layer: 0
   m_Name: perimeter
@@ -56,6 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4011690611081924}
   - component: {fileID: 114136484551278952}
+  - component: {fileID: 136765555894320452}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -201,30 +200,18 @@ MonoBehaviour:
   face: {fileID: 1552779378396350}
   perimeterMaterialDoPress: {fileID: 2100000, guid: f053ee81aa78c6c46a936f397439c2c9,
     type: 2}
-  mAxis: 
---- !u!136 &136120763876870864
+  buttonName: 
+  player: 0
+--- !u!136 &136765555894320452
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1552779378396350}
+  m_GameObject: {fileID: 1765861421657150}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &136483874160555990
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1722239627709938}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
+  m_Radius: 0.25
+  m_Height: 1.5
+  m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}

@@ -16,6 +16,7 @@ public class MusicButton : MonoBehaviour {
 	public Material perimeterMaterialDoPress;
 
 	public string buttonName;
+	public PlayerSide player;
 
 	// Use this for initialization
 	void Start () {
@@ -53,5 +54,13 @@ public class MusicButton : MonoBehaviour {
 	public void SetShouldPress( bool shouldPress = true ){
 		this.shouldPress = shouldPress;
 		perimeter.GetComponent<Renderer>().material = shouldPress ? perimeterMaterialDoPress : perimeterMaterialDontPress;
+	}
+
+	protected void OnTriggerEnter( Collider other ){
+		SetShouldPress(true);
+	}
+
+	protected void OnTriggerExit( Collider other ){
+		SetShouldPress(false);
 	}
 }
