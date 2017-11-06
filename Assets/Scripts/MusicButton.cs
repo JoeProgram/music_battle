@@ -55,17 +55,18 @@ public class MusicButton : MonoBehaviour {
 				// if it's our fret, assign a button
 				if(buttonSet.GetFret().player == player) {
 					buttonSet.GetFret().SetNote(note);
-				}
-				// otherwise, just clear it
-				else {
 					buttonSet.ClearFret();
+				}
+				// otherwise, just kill it
+				else {
+					buttonSet.KillFret();
 				}
 
 			} else {
 				Player.Players[player].AddMistake();
 			}
 				
-			buttonSet.ClearFret();
+
 
 		} else {
 			face.transform.localPosition = faceOutPosition;

@@ -28,7 +28,16 @@ public class MusicButtonSet : MonoBehaviour {
 		return currentFret;
 	}
 
+	public void KillFret(){
+		if(currentFret != null) {
+			currentFret.Kill();
+
+			ClearFret();
+		}
+	}
+
 	public void ClearFret(){
+
 		currentFret = null;
 
 		foreach(MusicButton button in buttons) {
@@ -58,17 +67,22 @@ public class MusicButtonSet : MonoBehaviour {
 
 	protected void OnTriggerExit( Collider other ){
 
-		// if it was our fret, delete it.
+
 		if(currentFret) {
+
+			// if it was our fret, delete it.
 			if(currentFret.player == player) {
 				currentFret.Kill();
+
+			// if it was the other player's fret, you messed up
 			} else {
 				Player.Players[player].AddMistake();
+				KillFret();
 			}
 
-			ClearFret();
+
 		}
-		// if it was the other player's fret, you messed up
+
 
 
 	}

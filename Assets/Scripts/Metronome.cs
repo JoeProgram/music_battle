@@ -8,7 +8,9 @@ public class Metronome : MonoBehaviour {
 	public GameObject fretPrefab;
 
 	protected Vector3 leftStartingPosition = new Vector3(0,-15,0);
+	protected Vector3 leftEndingPosition = new Vector3(0,12.5f,0);
 	protected Vector3 rightStartingPosition = new Vector3(0,15,0);
+	protected Vector3 rightEndingPosition = new Vector3(0,-12.5f,0);
 
 	public enum PlayerTurn {LEFT_CALL, LEFT_RESPONSE, RIGHT_CALL, RIGHT_RESPONSE};
 	protected PlayerTurn playerTurn = PlayerTurn.LEFT_RESPONSE;
@@ -88,14 +90,14 @@ public class Metronome : MonoBehaviour {
 
 
 	protected void CalcFretRotationTime(){
-		fretRotationTime = (turnTime/(rightButtonPosition.y - leftButtonPosition.y)) * (rightStartingPosition.y - leftButtonPosition.y); 
+		fretRotationTime = (turnTime/(rightButtonPosition.y - leftButtonPosition.y)) * (rightStartingPosition.y - rightEndingPosition.y); 
 	}
 
 	public void CreateFret(){
 		GameObject fret = Instantiate(fretPrefab) as GameObject;
 
 		fret.transform.eulerAngles = playerTurn == PlayerTurn.LEFT_CALL ? leftStartingPosition : rightStartingPosition;
-		Vector3 endingRotation = playerTurn == PlayerTurn.LEFT_CALL ? rightButtonPosition : leftButtonPosition;
+		Vector3 endingRotation = playerTurn == PlayerTurn.LEFT_CALL ? leftEndingPosition: rightEndingPosition;
 		fret.GetComponent<Fret>().Setup(playerTurn == PlayerTurn.LEFT_CALL ? PlayerSide.LEFT : PlayerSide.RIGHT);
 
 		fret.transform.DORotate(endingRotation, fretRotationTime, RotateMode.Fast).SetEase(Ease.Linear);
