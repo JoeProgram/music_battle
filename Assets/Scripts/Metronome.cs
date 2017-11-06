@@ -98,6 +98,6 @@ public class Metronome : MonoBehaviour {
 		Vector3 endingRotation = playerTurn == PlayerTurn.LEFT_CALL ? rightButtonPosition : leftButtonPosition;
 		fret.GetComponent<Fret>().Setup(playerTurn == PlayerTurn.LEFT_CALL ? PlayerSide.LEFT : PlayerSide.RIGHT);
 
-		fret.transform.DORotate(endingRotation, fretRotationTime, RotateMode.Fast).SetEase(Ease.Linear).OnComplete( () => fret.GetComponent<Fret>().Kill() );
+		fret.transform.DORotate(endingRotation, fretRotationTime, RotateMode.Fast).SetEase(Ease.Linear);
 	}
 }

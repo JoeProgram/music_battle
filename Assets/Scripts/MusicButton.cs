@@ -15,12 +15,19 @@ public class MusicButton : MonoBehaviour {
 	protected Material perimeterMaterialDontPress;
 	public Material perimeterMaterialDoPress;
 
+	protected MusicButtonSet buttonSet;
 	public string buttonName;
 	public PlayerSide player;
+	public int note;
+
+
 
 	// Use this for initialization
 	void Start () {
 	
+		// find and assign parent
+		buttonSet = transform.GetComponentInParent<MusicButtonSet>();
+
 		// grab default values that we'll need to restore later
 		perimeterMaterialDontPress = perimeter.GetComponent<Renderer>().material;
 		faceOutPosition = face.transform.localPosition;
@@ -36,16 +43,30 @@ public class MusicButton : MonoBehaviour {
 			SetPressed(false);
 		}
 
-		// testing
-		if(Input.GetKeyDown(KeyCode.A)) {
-			SetShouldPress(!shouldPress);
-		}
-
 	}
 
 	protected void SetPressed( bool pressed = true ){
+		
 		if(pressed) {
 			face.transform.localPosition = faceInPosition;
+
+			if(shouldPress) {
+
+				// if it's our fret, assign a button
+				if(buttonSet.GetFret().player == player) {
+					buttonSet.GetFret().SetNote(note);
+				}
+				// otherwise, just clear it
+				else {
+					buttonSet.ClearFret();
+				}
+
+			} else {
+				Player.Players[player].AddMistake();
+			}
+				
+			buttonSet.ClearFret();
+
 		} else {
 			face.transform.localPosition = faceOutPosition;
 		}
@@ -55,12 +76,5 @@ public class MusicButton : MonoBehaviour {
 		this.shouldPress = shouldPress;
 		perimeter.GetComponent<Renderer>().material = shouldPress ? perimeterMaterialDoPress : perimeterMaterialDontPress;
 	}
-
-	protected void OnTriggerEnter( Collider other ){
-		SetShouldPress(true);
-	}
-
-	protected void OnTriggerExit( Collider other ){
-		SetShouldPress(false);
-	}
+		
 }
