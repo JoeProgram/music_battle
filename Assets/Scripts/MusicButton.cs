@@ -52,18 +52,7 @@ public class MusicButton : MonoBehaviour {
 			face.transform.localPosition = faceInPosition;
 
 			if(shouldPress) {
-
-				AudioSource.PlayClipAtPoint(sfxNote, Camera.main.transform.position);
-
-				// if it's our fret, assign a button
-				if(buttonSet.GetFret().player == player) {
-					buttonSet.GetFret().SetNote(note);
-					buttonSet.ClearFret();
-				}
-				// otherwise, just kill it
-				else {
-					buttonSet.KillFret();
-				}
+				
 
 			} else {
 				Player.Players[player].AddMistake();

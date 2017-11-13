@@ -55,10 +55,14 @@
      <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
      <Compile Include="Assets\Scripts\CharacterSpotlight.cs" />
      <Compile Include="Assets\Scripts\Fret.cs" />
+     <Compile Include="Assets\Scripts\Measure.cs" />
      <Compile Include="Assets\Scripts\Metronome.cs" />
      <Compile Include="Assets\Scripts\MusicButton.cs" />
      <Compile Include="Assets\Scripts\MusicButtonSet.cs" />
+     <Compile Include="Assets\Scripts\Neck.cs" />
+     <Compile Include="Assets\Scripts\Note.cs" />
      <Compile Include="Assets\Scripts\OffCenterCamera.cs" />
+     <Compile Include="Assets\Scripts\Phrase.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
      <None Include="Assets\Demigiant\DOTween\readme.txt" />

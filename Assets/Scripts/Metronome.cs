@@ -67,7 +67,6 @@ public class Metronome : MonoBehaviour {
 		if(playerTurn == PlayerTurn.LEFT_CALL || playerTurn == PlayerTurn.RIGHT_CALL) {
 			if(timeToNextFret <= 0) {
 
-				CreateFret();
 				remainingFretsInSet -= 1;
 
 				if(remainingFretsInSet > 0) {
@@ -93,13 +92,5 @@ public class Metronome : MonoBehaviour {
 		fretRotationTime = (turnTime/(rightButtonPosition.y - leftButtonPosition.y)) * (rightStartingPosition.y - rightEndingPosition.y); 
 	}
 
-	public void CreateFret(){
-		GameObject fret = Instantiate(fretPrefab) as GameObject;
 
-		fret.transform.eulerAngles = playerTurn == PlayerTurn.LEFT_CALL ? leftStartingPosition : rightStartingPosition;
-		Vector3 endingRotation = playerTurn == PlayerTurn.LEFT_CALL ? leftEndingPosition: rightEndingPosition;
-		fret.GetComponent<Fret>().Setup(playerTurn == PlayerTurn.LEFT_CALL ? PlayerSide.LEFT : PlayerSide.RIGHT);
-
-		fret.transform.DORotate(endingRotation, fretRotationTime, RotateMode.Fast).SetEase(Ease.Linear);
-	}
 }
