@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Phrase : MonoBehaviour {
 
+	public static Phrase Instance;
+
 	public List<Measure> measures;
 	public float speed;
 	public Vector3 direction = Vector3.left;
@@ -12,9 +14,8 @@ public class Phrase : MonoBehaviour {
 
 	protected bool isDone = false;
 
-	// Use this for initialization
-	void Start () {
-		
+	void Awake () {
+		Instance = this;
 	}
 	
 	// Update is called once per frame

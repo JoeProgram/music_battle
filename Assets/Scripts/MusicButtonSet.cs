@@ -26,6 +26,11 @@ public class MusicButtonSet : MonoBehaviour {
 
 		if(other.CompareTag("beat")) {
 			AudioSource.PlayClipAtPoint(sfxBeat, Camera.main.transform.position);
+
+		
+		} else if(other.CompareTag("end")) {
+			Neck.Instance.Flip();
+			Phrase.Instance.Reverse();
 		}
 
 		//foreach( MusicButton button in buttons ){

@@ -5,6 +5,12 @@ using DG.Tweening;
 
 public class Neck : MonoBehaviour {
 
+	public static Neck Instance;
+
+	void Awake(){
+		Instance = this;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.C)) {
