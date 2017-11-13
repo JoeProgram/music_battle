@@ -20,8 +20,8 @@ public class Metronome : MonoBehaviour {
 	protected Vector3 rightButtonPosition = new Vector3(0,10.5f,0);
 	protected float fretRotationTime;
 
-	protected float timeBetweenFrets = 1f;
-	protected float fretsPerSet = 4;
+	protected float timeBetweenFrets = 0.5f;
+	protected float fretsPerSet = 8;
 	protected float timeToNextFret;
 	protected float remainingFretsInSet;
 

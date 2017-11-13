@@ -16,6 +16,8 @@ public class Player : MonoBehaviour {
 	protected int health;
 	protected int hurt = 10;
 
+	public AudioClip sfxMistake;
+
 	public static Dictionary<PlayerSide, Player> Players = new Dictionary<PlayerSide, Player>();
 
 	// Use this for initialization
@@ -27,6 +29,9 @@ public class Player : MonoBehaviour {
 	}
 
 	public void AddMistake(){
+
+		AudioSource.PlayClipAtPoint(sfxMistake, Camera.main.transform.position);
+
 		health -= hurt;
 		healthUI.value = health * 1.0f / maxHealth;
 		if(health <= 0) {
